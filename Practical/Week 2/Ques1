@@ -1,1 +1,32 @@
+#include <iostream>
+using namespace std;
 
+int main()
+{
+    int n;
+    cout<<"Enter number of elements :";
+    cin>>n;
+    int arr[n];
+    cout<<"Enter array elements: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter target element: ";
+    int t;
+    cin>>t;
+    int count=0;
+    for(int i=0;i<n;i++){
+        if(t==arr[i])
+            count++;
+        if(arr[i]>t)
+            break;
+    }
+    if(count==0)
+        cout<<"The element is not present in the array\n";
+    else
+        cout<<"The element is occurs "<< count<<" times in the array\n";
+        
+    
+
+    return 0;
+}
