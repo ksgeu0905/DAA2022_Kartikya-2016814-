@@ -1,1 +1,31 @@
+// Given an array of Non_negative integers to count the no of pairs of integers such that their diff is equal to the given key
 
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"Enter number of elements :";
+    cin>>n;
+    int arr[n],size;
+    cout<<"Enter array elements : ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<"Enter target element: ";
+    int t;
+    cin>>t;
+    int pairs=0;
+    for(int i=0;i<n-1;i++){
+        for(int j=i;j<n;j++){
+            if(abs(arr[i]-arr[j])==t){
+                cout<<"("<<arr[i]<<","<<arr[j]<<")"<<endl;
+                pairs++;
+            }
+        }
+    }
+    cout<<"number of pairs with given difference : "<<pairs;
+    return 0;
+}
