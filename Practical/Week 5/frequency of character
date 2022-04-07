@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string s;
+    cout<<"Enter string of characters: ";
+    cin>>s;
+    int arr[27]={0};
+    for(int i=0;i<s.length();i++ ){
+        arr[s[i]-97]++;
+    }
+    int max=0;
+    char c=s[0];
+    for(int i=0;i<27;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    
+    for(int i=0;i<27;i++){
+        if(max==arr[i]){
+            c=97+i;
+            cout<<"the character '"<<c<<"' occurs "<<max<<" times"<<endl;;
+        }
+    }
+
+    return 0;
+}
