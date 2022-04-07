@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int n;
+    cout<<"enter no of elements in array: ";
+    cin>>n;
+    int* arr=new int[n];
+    cout<<"enter elements of array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    int key;
+    cout<<"enter key element: ";
+    cin>>key;
+    sort(arr,arr+n);
+    int i=0,j=n-1;
+    while(i<j){
+        if(arr[i]+arr[j]==key){
+            cout<<arr[i]<<" + "<<arr[j]<<" = "<<key<<endl;
+            i++;j--;
+        }
+        else if(arr[i]+arr[j]>key)
+            j--;
+        else
+            i++;
+    }
+    return 0;
+}
